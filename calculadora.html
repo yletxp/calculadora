@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
@@ -44,7 +45,7 @@
         .botao:hover {
             background-color: black;
         }
-        
+
         #resultado {
             width: 207px;
             background-color: white;
@@ -55,11 +56,11 @@
             text-align: right;
             padding: 5px;
         }
-
     </style>
 </head>
+
 <body>
-    
+
     <div class="fundo"> <!-- fundo da web -->
 
         <h1>CALCULADORA MASTER</h1>
@@ -72,7 +73,9 @@
             <table>
                 <tr>
                     <td><button class="botao" onclick="clean()">C</button></td>
-                    <td><button class="botao" onclick="back()"><</button></td>
+                    <td><button class="botao" onclick="back()">
+                            << /button>
+                    </td>
                     <td><button class="botao" onclick="insert('/')">/</button></td>
                     <td><button class="botao" onclick="insert('*')">X</button></td>
                 </tr>
@@ -104,9 +107,9 @@
 
     <script>
         //irá mostrar o número selecionado, e concatenar outro operador ou número
-        function insert(num){
-           var numero = document.getElementById('resultado').innerHTML;
-           document.getElementById('resultado').innerHTML = numero + num;
+        function insert(num) {
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
         }
 
         //irá limpar toda a operação --> botão C
@@ -117,17 +120,17 @@
         //irá apagar 1 unidade de caractere --> botão <
         function back() {
             var resultado = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1)
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1)
         }
 
         //irá apresentar o resultado de qualquer operador matemático --> botão =
         function calcular() {
             var resultado = document.getElementById('resultado').innerHTML;
-            if(resultado)
-            {
+            if (resultado) {
                 document.getElementById('resultado').innerHTML = eval(resultado);
             }
         }
     </script>
 </body>
+
 </html>
